@@ -25,15 +25,15 @@
       <form  method="POST" action="/products" class="form-styles">
         <div class="mb-3">
           <label for="productName" class="form-label">Nombre del producto</label>
-          <input type="text" name="productName" class="form-control" id="productName" aria-describedby="emailHelp">
+          <input type="text" name="productName" class="form-control" id="productName" aria-describedby="emailHelp" required>
         </div>
         <div class="mb-3">
           <label for="productPrice" class="form-label">Precio del producto</label>
-          <input type="number" name="productPrice" class="form-control" id="productPrice" aria-describedby="emailHelp">
+          <input type="number" name="productPrice" class="form-control" id="productPrice" aria-describedby="emailHelp" required>
         </div>
         <div class="mb-3">
           <label for="thumbnail" class="form-label">Link con la imagen del producto</label>
-          <input type="text" name="thumbnail" id="thumbnail" class="form-control" id="exampleInputPassword1">
+          <input type="text" name="thumbnail" id="thumbnail" class="form-control" id="exampleInputPassword1" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar Producto</button>
       </form>
