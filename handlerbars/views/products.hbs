@@ -1,0 +1,55 @@
+<style>
+  .table-config{
+    margin: 30px auto;
+  }
+
+
+  .title-config{
+    margin: 20px auto;
+  }
+</style>
+
+<div class="container text-center title-config">
+  <h1>Lista de Productos</h1>
+</div>
+
+
+  {{!-- Table --}}
+<div class="container table-config text-center">
+  <div class="row">
+    <div class="col">
+      {{#if products}}
+        <table class="table table-hover table-dark">
+
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Foto</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each products}}
+            <tr>
+              <th scope="row">{{this.id}}</th>
+              <td>{{this.productName}}</td>
+              <td>{{moneyFormater this.productPrice}}</td>
+              <td><img src={{this.thumbnail}} height="40" width="40" alt=""></td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+
+        </table>
+
+      {{else}}
+        <div class="alert alert-warning" role="alert">
+          No hay productos para mostrar.
+        </div>
+      {{/if }}  
+    </div>
+  </div>
+
+  <a href="/products">Agregar mas productos</a>
+</div>
