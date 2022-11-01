@@ -19,12 +19,8 @@ router.get('/', (_req, res, next) => {
 // get all route
 router.get('/seeProducts', (_req, res, next) => {
   console.log(products)
-  const moneyFormat = (price) => new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(price)
   try {
-    res.render('pages/products', {
-      products : products.getProducts(),
-      moneyFormat: moneyFormat
-    })
+    res.render('pages/products', { products : products.getProducts()})
   } catch (err) {
     next(err);
   };
